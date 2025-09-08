@@ -1,0 +1,17 @@
+{
+  "name": "cv-online-sergio",
+  "version": "1.0.0",
+  "description": "CV en línea de Sergio Isaac Santana Jiménez con empaquetador, Sass y TypeScript",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "sass": "^1.69.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {}
+}

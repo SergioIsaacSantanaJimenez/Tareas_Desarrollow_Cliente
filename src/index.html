@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV Online - Sergio Isaac Santana Jiménez</title>
+  <meta name="description" content="Curriculum vitae online de Sergio Isaac Santana Jiménez - Licenciatura en Ingeniería en Desarrollo de Software">
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+</head>
+<body>
+  <!-- Loading inicial -->
+  <div id="loading" class="loading">
+    <p>Cargando CV...</p>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div id="header-info">
+      <!-- Contenido dinámico desde TypeScript -->
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="container">
+    
+    <!-- Sección Formación -->
+    <section class="seccion formacion">
+      <h2 class="seccion__titulo">Formación</h2>
+      <div id="formacion-content">
+        <!-- Contenido dinámico desde TypeScript -->
+      </div>
+    </section>
+
+    <!-- Sección Experiencia Laboral -->
+    <section class="seccion experiencia">
+      <h2 class="seccion__titulo">Historial Laboral</h2>
+      <div id="experiencia-content">
+        <!-- Contenido dinámico desde TypeScript -->
+      </div>
+    </section>
+
+    <!-- Grid de dos columnas para Aptitudes e Idiomas -->
+    <div class="grid-dos-columnas">
+      <!-- Sección Aptitudes -->
+      <section class="seccion aptitudes">
+        <h2 class="seccion__titulo">Aptitudes</h2>
+        <div id="aptitudes-content">
+          <!-- Contenido dinámico desde TypeScript -->
+        </div>
+      </section>
+
+      <!-- Sección Idiomas -->
+      <section class="seccion idiomas">
+        <h2 class="seccion__titulo">Idiomas</h2>
+        <div id="idiomas-content">
+          <!-- Contenido dinámico desde TypeScript -->
+        </div>
+      </section>
+    </div>
+
+    <!-- Sección Skills -->
+    <section class="seccion skills">
+      <h2 class="seccion__titulo">Habilidades Técnicas</h2>
+      <div id="skills-content">
+        <!-- Contenido dinámico desde TypeScript -->
+      </div>
+    </section>
+
+    <!-- Formulario de Contacto -->
+    <section class="seccion formulario-contacto">
+      <h2 class="seccion__titulo">Contacto</h2>
+      <p>¿Interesado en trabajar conmigo? ¡Envíame un mensaje!</p>
+      
+      <form id="contacto-form" class="formulario" novalidate>
+        <!-- Campo Nombre -->
+        <div class="campo">
+          <label for="nombre" class="campo__label">Nombre completo *</label>
+          <input 
+            type="text" 
+            id="nombre" 
+            name="nombre" 
+            class="campo__input"
+            required
+            aria-describedby="nombre-error"
+            placeholder="Tu nombre completo"
+          >
+        </div>
+
+        <!-- Campo Email -->
+        <div class="campo">
+          <label for="email" class="campo__label">Email *</label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            class="campo__input"
+            required
+            aria-describedby="email-error"
+            placeholder="tu@email.com"
+          >
+        </div>
+
+        <!-- Campo Asunto -->
+        <div class="campo">
+          <label for="asunto" class="campo__label">Asunto</label>
+          <input 
+            type="text" 
+            id="asunto" 
+            name="asunto" 
+            class="campo__input"
+            placeholder="Asunto del mensaje"
+          >
+        </div>
+
+        <!-- Campo Mensaje -->
+        <div class="campo">
+          <label for="mensaje" class="campo__label">Mensaje *</label>
+          <textarea 
+            id="mensaje" 
+            name="mensaje" 
+            class="campo__textarea"
+            required
+            aria-describedby="mensaje-error"
+            placeholder="Escribe tu mensaje aquí..."
+          ></textarea>
+        </div>
+
+        <!-- Botón de envío -->
+        <button type="submit" class="btn-enviar">
+          Enviar Mensaje
+        </button>
+
+        <!-- Campos ocultos para FormSubmit -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+      </form>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__texto">
+      <p>&copy; 2024 <strong>Sergio Isaac Santana Jiménez</strong> - CV Online</p>
+      <p>Desarrollado con HTML, Sass y TypeScript</p>
+    </div>
+  </footer>
+
+  <!-- Script principal -->
+  <script type="module" src="./main.ts"></script>
+
+  <script>
+    // Ocultar loading cuando se carga la página
+    window.addEventListener('load', () => {
+      const loading = document.getElementById('loading');
+      if (loading) {
+        loading.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
