@@ -1,0 +1,22 @@
+<div class="panel-derecho">
+  <h3>Detalles</h3>
+  
+  <div *ngIf="elementoSeleccionado; else noSeleccionado" class="contenido-seleccionado">
+    <div class="titulo-seleccionado">
+      <h4>Película seleccionada:</h4>
+      <p>{{ elementoSeleccionado }}</p>
+    </div>
+    
+    <button 
+      (click)="limpiar()" 
+      class="btn-limpiar">
+      Limpiar
+    </button>
+  </div>
+  
+  <ng-template #noSeleccionado>
+    <div class="sin-seleccion">
+      <p>Selecciona una película de la lista</p>
+    </div>
+  </ng-template>
+</div>

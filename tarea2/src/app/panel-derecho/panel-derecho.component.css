@@ -1,0 +1,73 @@
+.panel-derecho {
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+h3 {
+  margin-top: 0;
+  color: #333;
+  border-bottom: 2px solid #28a745;
+  padding-bottom: 10px;
+}
+
+.contenido-seleccionado {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.titulo-seleccionado {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid #e0e0e0;
+}
+
+.titulo-seleccionado h4 {
+  margin: 0 0 10px 0;
+  color: #333;
+  font-size: 16px;
+}
+
+.titulo-seleccionado p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.btn-limpiar {
+  padding: 10px 20px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  align-self: flex-start;
+  transition: background-color 0.2s ease;
+}
+
+.btn-limpiar:hover {
+  background-color: #c82333;
+}
+
+.sin-seleccion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  background-color: white;
+  border: 2px dashed #ddd;
+  border-radius: 5px;
+}
+
+.sin-seleccion p {
+  color: #666;
+  font-style: italic;
+  font-size: 16px;
+  margin: 0;
+}

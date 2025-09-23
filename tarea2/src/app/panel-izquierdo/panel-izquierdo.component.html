@@ -1,0 +1,12 @@
+<div class="panel-izquierdo">
+  <h3>Lista de Películas</h3>
+  <ul class="lista-elementos">
+    <li 
+      *ngFor="let pelicula of peliculas" 
+      (click)="seleccionarElemento(pelicula)"
+      [class.seleccionado]="pelicula === elementoSeleccionado"
+      class="elemento-lista">
+      {{ pelicula }}
+    </li>
+  </ul>
+</div>

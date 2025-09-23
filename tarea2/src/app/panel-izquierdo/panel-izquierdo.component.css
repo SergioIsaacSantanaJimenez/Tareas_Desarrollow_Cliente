@@ -1,0 +1,41 @@
+.panel-izquierdo {
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+h3 {
+  margin-top: 0;
+  color: #333;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+}
+
+.lista-elementos {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.elemento-lista {
+  padding: 12px 15px;
+  margin: 5px 0;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.elemento-lista:hover {
+  background-color: #e3f2fd;
+  border-color: #007bff;
+}
+
+.elemento-lista.seleccionado {
+  background-color: #007bff;
+  color: white;
+  border-color: #0056b3;
+}
