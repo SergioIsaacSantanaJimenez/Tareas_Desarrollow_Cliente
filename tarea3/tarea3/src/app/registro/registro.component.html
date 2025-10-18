@@ -1,0 +1,92 @@
+<div class="container">
+  <h2>Registro de Usuario</h2>
+  
+  <form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
+    
+    <div class="form-group">
+      <label for="nombre">Nombre:</label>
+      <input 
+        type="text" 
+        id="nombre" 
+        formControlName="nombre"
+        class="form-control">
+      <div class="error" *ngIf="registroForm.get('nombre')?.invalid && registroForm.get('nombre')?.touched">
+        <small *ngIf="registroForm.get('nombre')?.errors?.['required']">El nombre es requerido</small>
+        <small *ngIf="registroForm.get('nombre')?.errors?.['minlength']">Mínimo 2 caracteres</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Correo electrónico:</label>
+      <input 
+        type="email" 
+        id="email" 
+        formControlName="email"
+        class="form-control">
+      <div class="error" *ngIf="registroForm.get('email')?.invalid && registroForm.get('email')?.touched">
+        <small *ngIf="registroForm.get('email')?.errors?.['required']">El correo es requerido</small>
+        <small *ngIf="registroForm.get('email')?.errors?.['email']">Formato de correo inválido</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="edad">Edad:</label>
+      <input 
+        type="text" 
+        id="edad" 
+        formControlName="edad"
+        class="form-control">
+      <div class="error" *ngIf="registroForm.get('edad')?.invalid && registroForm.get('edad')?.touched">
+        <small *ngIf="registroForm.get('edad')?.errors?.['required']">La edad es requerida</small>
+        <small *ngIf="registroForm.get('edad')?.errors?.['min']">Debes ser mayor de 18 años</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Contraseña:</label>
+      <input 
+        type="password" 
+        id="password" 
+        formControlName="password"
+        class="form-control">
+      <div class="error" *ngIf="registroForm.get('password')?.invalid && registroForm.get('password')?.touched">
+        <small *ngIf="registroForm.get('password')?.errors?.['required']">La contraseña es requerida</small>
+        <small *ngIf="registroForm.get('password')?.errors?.['minlength']">Mínimo 8 caracteres</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="confirmarPassword">Confirmar contraseña:</label>
+      <input 
+        type="password" 
+        id="confirmarPassword" 
+        formControlName="confirmarPassword"
+        class="form-control">
+      <div class="error" *ngIf="registroForm.get('confirmarPassword')?.invalid && registroForm.get('confirmarPassword')?.touched">
+        <small *ngIf="registroForm.get('confirmarPassword')?.errors?.['required']">Confirma tu contraseña</small>
+      </div>
+      <div class="error" *ngIf="registroForm.errors?.['passwordsMismatch'] && registroForm.get('confirmarPassword')?.touched">
+        <small>Las contraseñas no coinciden</small>
+      </div>
+    </div>
+
+    <div class="form-group checkbox-group">
+      <label>
+        <input 
+          type="checkbox" 
+          formControlName="terminos">
+        Acepto los términos y condiciones
+      </label>
+      <div class="error" *ngIf="registroForm.get('terminos')?.invalid && registroForm.get('terminos')?.touched">
+        <small>Debes aceptar los términos</small>
+      </div>
+    </div>
+
+    <button 
+      type="submit" 
+      [disabled]="registroForm.invalid"
+      class="btn-submit">
+      Registrar
+    </button>
+  </form>
+</div>
