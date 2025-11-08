@@ -1,0 +1,31 @@
+<div class="chat-container">
+  <h1>Chat en Tiempo Real</h1>
+
+  <div *ngIf="!connected" class="login-section">
+    <h2>Ingresa tu nombre</h2>
+    <input 
+      type="text" 
+      [(ngModel)]="username" 
+      placeholder="Tu nombre"
+      (keyup.enter)="connectUser()">
+    <button (click)="connectUser()">Conectar</button>
+  </div>
+
+  <div *ngIf="connected" class="chat-section">
+    <div class="messages-container">
+      <div *ngFor="let msg of messages" class="message">
+        <strong>{{ msg.username }}:</strong> {{ msg.message }}
+        <span class="timestamp">{{ msg.timestamp | date:'short' }}</span>
+      </div>
+    </div>
+
+    <div class="input-section">
+      <input 
+        type="text" 
+        [(ngModel)]="message" 
+        placeholder="Escribe un mensaje..."
+        (keyup.enter)="sendMessage()">
+      <button (click)="sendMessage()">Enviar</button>
+    </div>
+  </div>
+</div>
