@@ -1,0 +1,58 @@
+{
+  "personal": {
+    "nombre": "Sergio Isaac Santana Jiménez Santana Jiménez",
+    "fechaNacimiento": "10/03/2003",
+    "direccion": "Emiliano Zapata 695 Zapopan 45168 Zapopan Altamira",
+    "telefono": "+523317902210",
+    "email": "sergiosacsantana@gmail.com",
+    "emailContacto": "sergiosacsantana@gmail.com"
+  },
+  "formacion": {
+    "titulo": "Licenciatura en Ingeniería en Desarrollo de Software",
+    "descripcion": "Tecnologías de la información",
+    "institucion": "ITESO - Tlaquepaque, JAL",
+    "periodo": "08/2022 - 06/2027"
+  },
+  "experiencia": [
+    {
+      "puesto": "Desarrollador Web Jr.",
+      "empresa": "Proyecto Personal",
+      "periodo": "2023 - Actualidad",
+      "actividades": [
+        "Desarrollo de aplicaciones web con TypeScript y React",
+        "Implementación de diseños responsive con Sass",
+        "Uso de herramientas de versionamiento con Git"
+      ]
+    }
+  ],
+  "aptitudes": [
+    "Facilidad con los números",
+    "Dominio del inglés",
+    "Trabajo en equipo",
+    "Facilidad de aprender",
+    "Persona honesta",
+    "Habilidad para resolver problemas"
+  ],
+  "idiomas": [
+    {
+      "idioma": "inglés",
+      "nivel": "Avanzado",
+      "codigo": "C1"
+    },
+    {
+      "idioma": "español",
+      "nivel": "Avanzado",
+      "codigo": "C1"
+    }
+  ],
+  "skills": [
+    "HTML/CSS",
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Node.js",
+    "Git",
+    "Sass",
+    "Responsive Design"
+  ]
+}

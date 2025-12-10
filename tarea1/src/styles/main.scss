@@ -1,0 +1,420 @@
+// Importar parciales
+@import './_variables';
+@import './_mixins';
+
+// Reset básico
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Estilos base del body
+body {
+  font-family: $fuente-principal;
+  line-height: 1.6;
+  color: $color-negro;
+  background-color: $color-gris-claro;
+  
+  // Container queries support
+  container-type: inline-size;
+}
+
+// Header
+.header {
+  background: linear-gradient(135deg, $color-rojo, $color-rojo-oscuro);
+  color: $color-blanco;
+  padding: $espacio-xl 0;
+  @extend %texto-centrado;
+  
+  .header__nombre {
+    @include titulo-seccion;
+    color: $color-blanco;
+    border-bottom: 3px solid $color-amarillo;
+    display: inline-block;
+    margin-bottom: $espacio-md;
+  }
+  
+  .header__info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: $espacio-sm;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $espacio-md;
+    
+    @include responsive(mobile) {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+  }
+  
+  .header__item {
+    strong {
+      color: $color-amarillo;
+    }
+  }
+}
+
+// Contenedor principal
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: $espacio-lg $espacio-md;
+  
+  @include responsive(mobile) {
+    padding: $espacio-md;
+  }
+}
+
+// Secciones
+.seccion {
+  @include tarjeta;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+
+  &.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &__titulo {
+    @include titulo-seccion;
+  }
+}
+
+// Formación
+.formacion {
+  .formacion__info {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: $espacio-lg;
+    
+    @include responsive(mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .formacion__titulo {
+    font-size: $texto-grande;
+    font-weight: bold;
+    color: $color-rojo;
+    margin-bottom: $espacio-sm;
+  }
+  
+  .formacion__institucion {
+    color: $color-gris-oscuro;
+    font-style: italic;
+  }
+  
+  .formacion__periodo {
+    @extend %flex-centrado;
+    background-color: $color-amarillo-claro;
+    padding: $espacio-sm;
+    border-radius: $radio-border-pequeno;
+    font-weight: bold;
+    
+    @include responsive(mobile) {
+      justify-content: flex-start;
+    }
+  }
+}
+
+// Experiencia laboral
+.experiencia {
+  .experiencia__item {
+    margin-bottom: $espacio-xl;
+    padding: $espacio-lg;
+    background-color: $color-gris-claro;
+    border-left: 4px solid $color-rojo;
+    border-radius: 0 $radio-border $radio-border 0;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  .experiencia__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: $espacio-md;
+    
+    @include responsive(mobile) {
+      flex-direction: column;
+      gap: $espacio-sm;
+    }
+  }
+  
+  .experiencia__puesto {
+    font-size: $texto-mediano;
+    font-weight: bold;
+    color: $color-rojo;
+  }
+  
+  .experiencia__empresa {
+    color: $color-gris-oscuro;
+    margin-top: $espacio-xs;
+  }
+  
+  .experiencia__periodo {
+    background-color: $color-amarillo;
+    color: $color-negro;
+    padding: $espacio-xs $espacio-sm;
+    border-radius: $radio-border-pequeno;
+    font-size: $texto-pequeno;
+    font-weight: bold;
+  }
+  
+  .experiencia__actividades {
+    list-style: none;
+    
+    li {
+      position: relative;
+      padding-left: $espacio-md;
+      margin-bottom: $espacio-sm;
+      
+      &::before {
+        content: '▶';
+        color: $color-amarillo;
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+}
+
+// Grid de dos columnas para aptitudes e idiomas
+.grid-dos-columnas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $espacio-lg;
+  
+  @include responsive(mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Aptitudes
+.aptitudes {
+  .aptitudes__lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: $espacio-sm;
+    list-style: none;
+  }
+  
+  .aptitudes__item {
+    background: linear-gradient(135deg, $color-amarillo-claro, $color-amarillo);
+    padding: $espacio-sm;
+    border-radius: $radio-border;
+    text-align: center;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: $sombra-media;
+    }
+  }
+}
+
+// Idiomas
+.idiomas {
+  .idiomas__lista {
+    display: flex;
+    flex-direction: column;
+    gap: $espacio-md;
+  }
+  
+  .idioma {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $espacio-md;
+    background-color: $color-blanco;
+    border-radius: $radio-border;
+    box-shadow: $sombra-ligera;
+    
+    @include responsive(mobile) {
+      flex-direction: column;
+      text-align: center;
+      gap: $espacio-sm;
+    }
+  }
+  
+  .idioma__nombre {
+    font-weight: bold;
+    text-transform: capitalize;
+    color: $color-rojo;
+  }
+  
+  .idioma__nivel {
+    background-color: $color-negro;
+    color: $color-blanco;
+    padding: $espacio-xs $espacio-sm;
+    border-radius: $radio-border-pequeno;
+    font-size: $texto-pequeno;
+  }
+}
+
+// Skills
+.skills {
+  .skills__lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $espacio-sm;
+    list-style: none;
+  }
+  
+  .skills__item {
+    background-color: $color-rojo;
+    color: $color-blanco;
+    padding: $espacio-xs $espacio-md;
+    border-radius: 20px;
+    font-size: $texto-pequeno;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background-color: $color-rojo-oscuro;
+      transform: scale(1.05);
+    }
+  }
+}
+
+// Formulario de contacto
+.formulario-contacto {
+  background: linear-gradient(135deg, $color-gris-claro, $color-blanco);
+  
+  .formulario {
+    display: grid;
+    gap: $espacio-md;
+  }
+  
+  .campo {
+    display: flex;
+    flex-direction: column;
+    gap: $espacio-xs;
+  }
+  
+  .campo__label {
+    font-weight: bold;
+    color: $color-rojo;
+  }
+  
+  .campo__input,
+  .campo__textarea {
+    padding: $espacio-sm;
+    border: 2px solid $color-gris-claro;
+    border-radius: $radio-border-pequeno;
+    font-family: $fuente-principal;
+    font-size: $texto-normal;
+    transition: border-color 0.3s ease;
+    
+    &:focus {
+      outline: none;
+      border-color: $color-amarillo;
+      box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.2);
+    }
+    
+    &.error {
+      border-color: $color-rojo;
+      box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.2);
+    }
+  }
+  
+  .campo__textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+  
+  .campo__error {
+    color: $color-rojo;
+    font-size: $texto-pequeno;
+    margin-top: $espacio-xs;
+  }
+  
+  .btn-enviar {
+    @include boton-base($color-rojo, $color-blanco, $color-rojo-oscuro);
+    font-size: $texto-mediano;
+    padding: $espacio-md $espacio-xl;
+    justify-self: center;
+    
+    &:disabled {
+      background-color: $color-gris-claro;
+      color: $color-gris-oscuro;
+      cursor: not-allowed;
+      
+      &:hover {
+        background-color: $color-gris-claro;
+        transform: none;
+      }
+    }
+  }
+}
+
+// Footer
+.footer {
+  background-color: $color-negro;
+  color: $color-blanco;
+  text-align: center;
+  padding: $espacio-lg;
+  margin-top: $espacio-xl;
+  
+  .footer__texto {
+    font-size: $texto-pequeno;
+    
+    strong {
+      color: $color-amarillo;
+    }
+  }
+}
+
+// Utilidades
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.loading {
+  @extend %flex-centrado;
+  min-height: 200px;
+  font-size: $texto-mediano;
+  color: $color-rojo;
+}
+
+// Mensajes de notificación
+.message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 1rem 2rem;
+  border-radius: $radio-border;
+  color: $color-blanco;
+  font-weight: bold;
+  z-index: 1000;
+  box-shadow: $sombra-fuerte;
+  transform: translateX(400px);
+  transition: transform 0.3s ease;
+
+  &.show {
+    transform: translateX(0);
+  }
+
+  &--success {
+    background-color: #16a34a;
+  }
+
+  &--error {
+    background-color: $color-rojo;
+  }
+}
